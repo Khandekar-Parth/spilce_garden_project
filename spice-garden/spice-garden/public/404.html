@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- GitHub Pages SPA fallback: Pages serves this for unknown paths like
+     /spice-garden/menu. It redirects to index.html with the path encoded
+     as a query string, which the script in index.html restores. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spice Garden</title>
+    <script>
+      var segmentCount = 1 // repo name occupies one path segment
+      var l = window.location
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname
+            .split('/')
+            .slice(0, 1 + segmentCount)
+            .join('/') +
+          '/?/' +
+          l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+      )
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [react()],
   // GitHub Pages serves the site at https://<username>.github.io/spice-garden/
   // If you rename the repo, update this to match: '/<repo-name>/'
-  base: '/spilce_garden_project/',
+  base: '/spice-garden/',
 })
